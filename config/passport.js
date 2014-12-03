@@ -45,8 +45,8 @@ module.exports.passport = {
     strategy: require('passport-facebook').Strategy,
     options: {
       profileFields: ['id', 'displayName', 'photos'],
-      clientID: '133910146726405',
-      clientSecret: 'd8bfb60851b458f6e1912655f3eaa305'
+      clientID: process.env.FACEBOOK_CLIENT,
+      clientSecret: process.env.FACEBOOK_SECRET
     }
   },
 
