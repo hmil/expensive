@@ -1,0 +1,10 @@
+<% if (providers) {%>
+  <h1>Log in</h1>
+  <p>You can log-in using one of the following providers:</p>
+
+  <% Object.keys(providers).forEach(function (key) { %>
+    <a href="/auth/<%= providers[key].slug %>" role="button" class="btn btn-primary btn-large">
+      <%= providers[key].name %>
+    </a>
+  <% }) %>
+<% } %>

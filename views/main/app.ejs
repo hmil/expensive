@@ -1,0 +1,106 @@
+<div id="app">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>Expences management</h1>
+      <p>
+        The system allows you to track group expenses using a central <em>basket</em>: 
+        If you spent less than average you owe money to the basket, if you spent more, the basket owe you.<br />
+        Everytime you spend or earn something, you must add en entry in the history.
+    </p>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-lg-3">
+      <h2><%= __('Balance') %></h2>
+      <div id="balance"></div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          Your <em>personnal balance</em> shows how much you owe them or they owe you.<br />
+          The <em>overall total</em> counts the total amount spend/earnd by the group
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-lg-offset-1">
+      <div class="row">
+        <h2><%= __('History') %></h2>
+        <div class="spreadsheet">
+          <table class="table table-bordered">
+            <thead class="spreadsheet-head">
+              <tr>
+                <th><%= __('sheet_date') %></th>
+                <th><%= __('sheet_amount', '€') %></th>
+                <th><%= __('sheet_person') %></th>
+                <th><%= __('sheet_description') %></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="expenditures" class="spreadsheet-body">
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <h3><%= __('Add an entry') %></h3>
+        <form action="#" id="add-expenditure-form">
+          <div class="form">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-6">
+                  <input type="date" name="date" class="form-control" placeholder="Date">
+                </div>
+                <div class="col-lg-6">
+                  <input type="number" name="amount" class="form-control" placeholder="Amount (negative if you paid)">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" name="description" class="form-control" placeholder="Description">
+            </div>
+            <input type="submit" class="btn btn-primary">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-4">
+      
+    </div>
+  </div>
+</div>
+
+<div id="editModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title"><%= __('Edit expenditure') %></h4>
+      </div>
+      <div class="modal-body">
+        <form action="#" id="edit-expenditure-form">
+          <div class="form">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-6">
+                  <input type="date" name="date" class="form-control" placeholder="Date">
+                </div>
+                <div class="col-lg-6">
+                  <input type="number" name="amount" class="form-control" placeholder="Amount">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" name="description" class="form-control" placeholder="Description">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="editModal-accept-btn">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

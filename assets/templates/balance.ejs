@@ -1,0 +1,26 @@
+<% 
+  var personalExpense = expenditures.personalExpense(user.id);
+  var totalBalance = expenditures.totalBalance();
+  var totalPeople = expenditures.totalPeople();
+  var goal = (totalPeople > 0) ? totalBalance / totalPeople : 0;
+  var personalBalance = Math.floor(goal - personalExpense);
+ %>
+<h3>
+  <% if (personalBalance < 0) { %>
+    You owe <span class="expense expense-negative"><%= -personalBalance %>€</span>
+  <% } else if (personalBalance > 0) { %>
+    They owe you <span class="expense expense-positive"><%= personalBalance %>€</span>
+  <% } else { %>
+    Your expenses are <strong>balanced</strong> !
+  <% } %>
+</h3>
+<dl>
+  <dt>Overall total</dt>
+  <dd><%= renderExpense(totalBalance) %></dd>
+  <dt>Cost per person</dt>
+  <dd><%= renderExpense(goal) %></dd>
+  <dt>Personnal total</dt>
+  <dd><%= renderExpense(personalExpense) %></dd>
+  <dt>Personnal balance</dt>
+  <dd><%= renderExpense(personalBalance) %></dd>
+</dl>

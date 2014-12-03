@@ -1,0 +1,42 @@
+.mini-icon {
+  width: auto;
+  height: 2em;
+  margin: -4px 0px;
+}
+
+@footer-color: #ccc;
+
+footer {
+  padding: 25px;
+  margin-top: 50px;
+  background-color: @footer-color;
+}
+
+html {
+  background-color: @footer-color;
+}
+
+#contents {
+  min-height: 300px;
+}
+
+.expense {
+  font-weight: bold;
+
+  &.expense-positive {
+    color: #0a0;
+  }
+
+  &.expense-negative {
+    color: #a00;
+  }
+}
+
+.icon-action {
+  color: #4083A6;
+  font-weight: bold;
+
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+  }
+}

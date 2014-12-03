@@ -1,0 +1,7 @@
+{
+  "app_name": "Experience",
+  "app_desc": "Une appli de démo avec Sails",
+  "sheet_date": "Date",
+  "sheet_person": "Personne",
+  "sheet_amount": "Somme (%s)"
+}

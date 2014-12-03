@@ -1,0 +1,23 @@
+<tr>
+  <td><%= date.toLocaleDateString() %></td>
+  <td class="amount">
+    <%= renderExpense(amount) %>
+  </td>
+  <td>
+    <img src="<%= person.picture %>" title="profile picture" class="mini-icon" alt="" />
+    <%= person.username %>
+  </td>
+  <td>
+    <%= description %>
+  </td>
+  <td>
+    <% if (person.id === user.id) { %>
+      <a href="#" data-action="edit" class="icon-action" data-id="<%= id %>">
+        <i class="glyphicon glyphicon-pencil"></i>
+      </a>
+      <a href="#" data-action="delete" class="icon-action" data-id="<%= id %>">
+        <i class="glyphicon glyphicon-trash"></i>
+      </a>
+    <% } %>
+  </td>
+</tr>
